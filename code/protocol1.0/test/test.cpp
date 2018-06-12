@@ -1,7 +1,7 @@
 /* Rewritten by Ha Nguyen
 * Original Author: Ryu Woon Jung (Leon)
 *
-* Test code for the four motors of the arm   
+* Test code for the four motors of the arm
 *
 *
 * DXL motors used: 1 MX64-AT, 1 MX-28 and 2 AX-12A's
@@ -49,14 +49,14 @@
 #define TORQUE_ENABLE                   1                   // Value for enabling the torque
 #define TORQUE_DISABLE                  0                   // Value for disabling the torque
 #define MAX_TORQUE						0x120				//Value for maximum torque
-#define DXL_1_MINIMUM_POSITION_VALUE    10                 // Dynamixel will rotate between this value
-#define DXL_1_MAXIMUM_POSITION_VALUE    1000                // and this value (note that the Dynamixel would not move when the position value is out of movable range. Check e-manual about the range of the Dynamixel you use.)
-#define DXL_2_MINIMUM_POSITION_VALUE    400                
-#define DXL_2_MAXIMUM_POSITION_VALUE    1500
-#define DXL_3_MINIMUM_POSITION_VALUE    10                 // Dynamixel will rotate between this value
-#define DXL_3_MAXIMUM_POSITION_VALUE    400
-#define DXL_4_MINIMUM_POSITION_VALUE    0                 // Dynamixel will rotate between this value
-#define DXL_4_MAXIMUM_POSITION_VALUE    110
+#define DXL_1_MINIMUM_POSITION_VALUE    1100                 // Dynamixel will rotate between this value
+#define DXL_1_MAXIMUM_POSITION_VALUE    1100                // and this value (note that the Dynamixel would not move when the position value is out of movable range. Check e-manual about the range of the Dynamixel you use.)
+#define DXL_2_MINIMUM_POSITION_VALUE    1020                
+#define DXL_2_MAXIMUM_POSITION_VALUE    1020
+#define DXL_3_MINIMUM_POSITION_VALUE    220                 // Dynamixel will rotate between this value
+#define DXL_3_MAXIMUM_POSITION_VALUE    220
+#define DXL_4_MINIMUM_POSITION_VALUE    200                 // Dynamixel will rotate between this value
+#define DXL_4_MAXIMUM_POSITION_VALUE    500
 #define DXL_MOVING_STATUS_THRESHOLD     20                  // Dynamixel moving status threshold
 
 #define ESC_ASCII_VALUE                 0x1b
@@ -170,7 +170,7 @@ int main()
 	}
 
 	// Set Maximum Torque #1
-	dxl_comm_result = packetHandler->write2ByteTxRx(portHandler, DXL1_ID, ADDR_MX_MAX_TORQUE, 200, &dxl_error);
+	dxl_comm_result = packetHandler->write2ByteTxRx(portHandler, DXL1_ID, ADDR_MX_MAX_TORQUE, 150, &dxl_error);
 	if (dxl_comm_result != COMM_SUCCESS)
 	{
 		packetHandler->printTxRxResult(dxl_comm_result);
@@ -185,7 +185,7 @@ int main()
 	}
 
 	// Set Maximum Torque #2
-	dxl_comm_result = packetHandler->write2ByteTxRx(portHandler, DXL2_ID, ADDR_MX_MAX_TORQUE, 520, &dxl_error);
+	dxl_comm_result = packetHandler->write2ByteTxRx(portHandler, DXL2_ID, ADDR_MX_MAX_TORQUE, 700, &dxl_error);
 	if (dxl_comm_result != COMM_SUCCESS)
 	{
 		packetHandler->printTxRxResult(dxl_comm_result);
@@ -200,7 +200,7 @@ int main()
 	}
 
 	// Set Maximum Torque #3
-	dxl_comm_result = packetHandler->write2ByteTxRx(portHandler, DXL3_ID, ADDR_MX_MAX_TORQUE, 300, &dxl_error);
+	dxl_comm_result = packetHandler->write2ByteTxRx(portHandler, DXL3_ID, ADDR_MX_MAX_TORQUE, 200, &dxl_error);
 	if (dxl_comm_result != COMM_SUCCESS)
 	{
 		packetHandler->printTxRxResult(dxl_comm_result);
@@ -215,7 +215,7 @@ int main()
 	}
 
 	// Set Maximum Torque #4
-	dxl_comm_result = packetHandler->write2ByteTxRx(portHandler, DXL4_ID, ADDR_MX_MAX_TORQUE, 200, &dxl_error);
+	dxl_comm_result = packetHandler->write2ByteTxRx(portHandler, DXL4_ID, ADDR_MX_MAX_TORQUE, 150, &dxl_error);
 	if (dxl_comm_result != COMM_SUCCESS)
 	{
 		packetHandler->printTxRxResult(dxl_comm_result);
@@ -400,7 +400,7 @@ int main()
 			|| (abs(dxl_3_goal_position[index] - dxl3_present_position) > DXL_MOVING_STATUS_THRESHOLD) || (abs(dxl_4_goal_position[index] - dxl4_present_position) > DXL_MOVING_STATUS_THRESHOLD));
 
 		sleep_for(3s); //delay before changing position again
-		// Change goal position
+					   // Change goal position
 		if (index == 0)
 		{
 			index = 1;
@@ -460,3 +460,4 @@ int main()
 
 	return 0;
 }
+
