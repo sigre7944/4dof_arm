@@ -60,7 +60,8 @@ class WINDECLSPEC GroupSyncWrite
   void    makeParam();
 
  public:
-  GroupSyncWrite(PortHandler *port, PacketHandler *ph, uint16_t start_address, uint16_t data_length);
+	 GroupSyncWrite();
+	 GroupSyncWrite(PortHandler *port, PacketHandler *ph, uint16_t start_address, uint16_t data_length);
   ~GroupSyncWrite() { clearParam(); }
 
   PortHandler     *getPortHandler()   { return port_; }
