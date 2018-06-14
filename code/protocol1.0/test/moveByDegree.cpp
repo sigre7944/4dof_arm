@@ -1,5 +1,5 @@
 /* Written Ha Nguyen
-* Based on the original by Ryu Woon Jung (Leon)
+* Reference from the original by Ryu Woon Jung (Leon)
 *
 * Test code for the four motors of the arm
 *

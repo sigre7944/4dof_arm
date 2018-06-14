@@ -135,8 +135,8 @@ d:\study\02 waseda\coding\test code with dynamixel sdk\include\dynamixel_sdk\gro
               _Kty=uint8_t,
               _Ty=uint8_t *
           ]
-d:\study\02 waseda\coding\test code with dynamixel sdk\code\protocol1.0\test.cpp(30): warning C4273: 'getchar': inconsistent dll linkage
+d:\study\02 waseda\coding\test code with dynamixel sdk\code\protocol1.0\test.cpp(31): warning C4273: 'getchar': inconsistent dll linkage
   d:\windows kits\10\include\10.0.17134.0\ucrt\stdio.h(306): note: see previous definition of 'getchar'
-d:\study\02 waseda\coding\test code with dynamixel sdk\code\protocol1.0\test.cpp(47): warning C4273: 'kbhit': inconsistent dll linkage
+d:\study\02 waseda\coding\test code with dynamixel sdk\code\protocol1.0\test.cpp(48): warning C4273: 'kbhit': inconsistent dll linkage
   d:\windows kits\10\include\10.0.17134.0\ucrt\conio.h(459): note: see previous definition of 'kbhit'
   test.vcxproj -> D:\Study\02 WASEDA\Coding\Test Code with Dynamixel SDK\code\protocol1.0\test\Debug\test.exe

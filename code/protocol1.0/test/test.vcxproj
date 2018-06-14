@@ -131,9 +131,11 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\test.cpp" />
+    <ClCompile Include="inverseKinematics.cpp" />
     <ClCompile Include="moveByDegree.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="inverseKinematics.h" />
     <ClInclude Include="moveByDegree.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

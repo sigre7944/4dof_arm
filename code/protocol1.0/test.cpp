@@ -1,5 +1,5 @@
 /* Written Ha Nguyen
-* Based on the original by Ryu Woon Jung (Leon)
+* Reference from the original by Ryu Woon Jung (Leon)
 *
 * Test code for the four motors of the arm
 *
@@ -23,6 +23,7 @@
 #include <stdio.h>
 
 #include "./test/moveByDegree.h"
+#include "./test/inverseKinematics.h"
 
 #define ESC_ASCII_VALUE                 0x1b
 
@@ -149,22 +150,22 @@ int main()
 			break;
 
 		//write each value for moving the motor in form of id-theta value in degree to move to
-		if (m1.move(1, 54) == 1) {
+		if (m1.move(1, 90) == 1) {
 			printf("Move failed, press any key to terminate...\n");
 			getchar();
 			break;
 		};
-		if (m1.move(2, 65) == 1) {
+		if (m1.move(2, 90) == 1) {
 			printf("Move failed, press any key to terminate...\n");
 			getchar();
 			break;
 		};
-		if (m1.move(3, 23) == 1) {
+		if (m1.move(3, 90) == 1) {
 			printf("Move failed, press any key to terminate...\n");
 			getchar();
 			break;
 		};
-		if (m1.move(4, 76) == 1) {
+		if (m1.move(4, 90) == 1) {
 			printf("Move failed, press any key to terminate...\n");
 			getchar();
 			break;
@@ -208,14 +209,29 @@ int main()
 		}
 	while ((abs(m1.dxl_goal_position[0] - m1.dxl_present_position[0]) > thres) || (abs(m1.dxl_goal_position[1] - m1.dxl_present_position[1]) >thres)
 			|| (abs(m1.dxl_goal_position[2] - m1.dxl_present_position[2]) > thres) || (abs(m1.dxl_goal_position[3] - m1.dxl_present_position[3]) > thres));
-
 	}
 
 	//disable torque
-	m1.disableTorque(1);
-	m1.disableTorque(2);
-	m1.disableTorque(3);
-	m1.disableTorque(4);
+	if (m1.disableTorque(1) == 1) {
+		printf("Cannot disabble torque, press any key to terminate...\n");
+		getchar();
+		return 1;
+	};
+	if (m1.disableTorque(2) == 1) {
+		printf("Cannot disabble torque, press any key to terminate...\n");
+		getchar();
+		return 1;
+	};
+	if (m1.disableTorque(3) == 1) {
+		printf("Cannot disabble torque, press any key to terminate...\n");
+		getchar();
+		return 1;
+	};
+	if (m1.disableTorque(4) == 1) {
+		printf("Cannot disabble torque, press any key to terminate...\n");
+		getchar();
+		return 1;
+	};
 
 	// Close port
 	m1.closePort();
