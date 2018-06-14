@@ -81,6 +81,7 @@ int main()
 	using std::chrono::system_clock;
 
 	moveByDegree m1 = moveByDegree();
+	int thres = m1.getThreshold();
 
 	// Open port
 	if (m1.checkPort() == 1) {
@@ -146,67 +147,71 @@ int main()
 		printf("Press any key to continue! (or press ESC to quit!)\n");
 		if (getchar() == ESC_ASCII_VALUE)
 			break;
-		sleep_for(3s);
 
-		if (m1.move(1, 45) == 1) {
-			printf("Press any key to terminate...\n");
+		//write each value for moving the motor in form of id-theta value in degree to move to
+		if (m1.move(1, 54) == 1) {
+			printf("Move failed, press any key to terminate...\n");
 			getchar();
-			return 0;
+			break;
 		};
-		if (m1.move(2, 45) == 1) {
-			printf("Press any key to terminate...\n");
+		if (m1.move(2, 65) == 1) {
+			printf("Move failed, press any key to terminate...\n");
 			getchar();
-			return 0;
+			break;
 		};
-		if (m1.move(3, 45) == 1) {
-			printf("Press any key to terminate...\n");
+		if (m1.move(3, 23) == 1) {
+			printf("Move failed, press any key to terminate...\n");
 			getchar();
-			return 0;
+			break;
 		};
-		if (m1.move(4, 45) == 1) {
-			printf("Press any key to terminate...\n");
+		if (m1.move(4, 76) == 1) {
+			printf("Move failed, press any key to terminate...\n");
 			getchar();
-			return 0;
+			break;
 		};
 
 		// Syncwrite goal position
 		if (m1.writeAll() == 1) {
-			printf("Press any key to terminate...\n");
+			printf("Syncwrite, press any key to terminate...\n");;
 			getchar();
-			return 0;
+			break;
 		};
 
 	do
 		{
-		// Syncwrite goal position
+		// Read goal position
 		if (m1.read(1) == 1) {
-			printf("Press any key to terminate...\n");
+			printf("Read failed, press any key to terminate...\n");
 			getchar();
-			return 0;
+			break;
 		};
 		if (m1.read(2) == 1) {
-			printf("Press any key to terminate...\n");
+			printf("Read failed, press any key to terminate...\n");
 			getchar();
-			return 0;
+			break;
 		};
 		if (m1.read(3) == 1) {
-			printf("Press any key to terminate...\n");
+			printf("Read failed, press any key to terminate...\n");
 			getchar();
-			return 0;
+			break;
 		};
 		if (m1.read(4) == 1) {
-			printf("Press any key to terminate...\n");
+			printf("Read failed, press any key to terminate...\n");
 			getchar();
-			return 0;
+			break;
 		};
 
+		//print the status
 		m1.print();
 
-		} while ((abs(m1.dxl_goal_position[1] - m1.dxl_present_position[1]) > m1.getThreshold()) || (abs(m1.dxl_goal_position[2] - m1.dxl_present_position[2]) >m1.getThreshold())
-			|| (abs(m1.dxl_goal_position[3] - m1.dxl_present_position[3]) > m1.getThreshold()) || (abs(m1.dxl_goal_position[4] - m1.dxl_present_position[4]) > m1.getThreshold()));
+		//check if the motor has reached destination
+		}
+	while ((abs(m1.dxl_goal_position[0] - m1.dxl_present_position[0]) > thres) || (abs(m1.dxl_goal_position[1] - m1.dxl_present_position[1]) >thres)
+			|| (abs(m1.dxl_goal_position[2] - m1.dxl_present_position[2]) > thres) || (abs(m1.dxl_goal_position[3] - m1.dxl_present_position[3]) > thres));
 
 	}
 
+	//disable torque
 	m1.disableTorque(1);
 	m1.disableTorque(2);
 	m1.disableTorque(3);
@@ -215,6 +220,8 @@ int main()
 	// Close port
 	m1.closePort();
 
+	//Sleep so there's time to read the error log
+	sleep_for(1s);
 	return 0;
 }
 

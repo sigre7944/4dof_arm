@@ -1,4 +1,4 @@
-﻿  moveByDegree.cpp
+﻿  test.cpp
 d:\study\02 waseda\coding\test code with dynamixel sdk\include\dynamixel_sdk\group_bulk_read.h(51): warning C4251: 'dynamixel::GroupBulkRead::id_list_': class 'std::vector<uint8_t,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of class 'dynamixel::GroupBulkRead'
           with
           [
@@ -135,8 +135,8 @@ d:\study\02 waseda\coding\test code with dynamixel sdk\include\dynamixel_sdk\gro
               _Kty=uint8_t,
               _Ty=uint8_t *
           ]
-d:\study\02 waseda\coding\test code with dynamixel sdk\code\protocol1.0\test\movebydegree.cpp(37): warning C4311: 'type cast': pointer truncation from 'int *' to 'unsigned long'
-d:\study\02 waseda\coding\test code with dynamixel sdk\code\protocol1.0\test\movebydegree.cpp(37): warning C4302: 'type cast': truncation from 'int *' to 'unsigned long'
-d:\study\02 waseda\coding\test code with dynamixel sdk\code\protocol1.0\test\movebydegree.cpp(38): warning C4311: 'type cast': pointer truncation from 'int *' to 'unsigned long'
-d:\study\02 waseda\coding\test code with dynamixel sdk\code\protocol1.0\test\movebydegree.cpp(38): warning C4302: 'type cast': truncation from 'int *' to 'unsigned long'
+d:\study\02 waseda\coding\test code with dynamixel sdk\code\protocol1.0\test.cpp(30): warning C4273: 'getchar': inconsistent dll linkage
+  d:\windows kits\10\include\10.0.17134.0\ucrt\stdio.h(306): note: see previous definition of 'getchar'
+d:\study\02 waseda\coding\test code with dynamixel sdk\code\protocol1.0\test.cpp(47): warning C4273: 'kbhit': inconsistent dll linkage
+  d:\windows kits\10\include\10.0.17134.0\ucrt\conio.h(459): note: see previous definition of 'kbhit'
   test.vcxproj -> D:\Study\02 WASEDA\Coding\Test Code with Dynamixel SDK\code\protocol1.0\test\Debug\test.exe

@@ -34,8 +34,8 @@ int moveByDegree::move(int id, int degree) {
 	{	
 		dxl_goal_position[id-1] = degree * calculateUnit(id)+min_value[id-1];
 		// Allocate goal position value into byte array
-		param_goal_position[0] = DXL_LOBYTE(dxl_goal_position);
-		param_goal_position[1] = DXL_HIBYTE(dxl_goal_position);
+		param_goal_position[0] = DXL_LOBYTE(dxl_goal_position[id-1]);
+		param_goal_position[1] = DXL_HIBYTE(dxl_goal_position[id-1]);
 
 		dxl_addparam_result = group.addParam(id, param_goal_position);//already made initialize
 		if (dxl_addparam_result != true)
@@ -166,6 +166,7 @@ int moveByDegree::disableTorque(int id) {
 		packetHandler->printRxPacketError(dxl_error);
 		return 1;
 	}
+	printf("Torque Disabled \n", id);
 	return 0;
 }
 
