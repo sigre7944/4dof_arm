@@ -22,10 +22,15 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-#include "./test/moveByDegree.h"
-#include "./test/inverseKinematics.h"
+
+#include "./test/inverseKinematics.h" // for inverse kinematics computation
+#include "./test/manualAdjust.h" //for manual adjustment by hand
 
 #define ESC_ASCII_VALUE                 0x1b
+
+using namespace std::this_thread;     // sleep_for, sleep_until
+using namespace std::chrono_literals; // ns, us, ms, s, h, etc.
+using std::chrono::system_clock;
 
 int getchar() //defining getch for different builds
 {
@@ -77,11 +82,8 @@ int kbhit(void) //defining kbhit for different builds
 
 int main()
 {
-	using namespace std::this_thread;     // sleep_for, sleep_until
-	using namespace std::chrono_literals; // ns, us, ms, s, h, etc.
-	using std::chrono::system_clock;
-
 	moveByDegree m1 = moveByDegree();
+	manualAdjust man = manualAdjust();
 	int thres = m1.getThreshold();
 
 	// Open port
@@ -142,6 +144,32 @@ int main()
 		return 0;
 	};
 
+	man.init(&m1);
+	man.loosenGrip();
+	sleep_for(3s);
+	man.newGoal();
+
+	//Set Max Torque
+	if (m1.setMaxTorque(1, 150) == 1) {
+		printf("Press any key to terminate...\n");
+		getchar();
+		return 0;
+	};
+	if (m1.setMaxTorque(2, 700) == 1) {
+		printf("Press any key to terminate...\n");
+		getchar();
+		return 0;
+	};
+	if (m1.setMaxTorque(3, 200) == 1) {
+		printf("Press any key to terminate...\n");
+		getchar();
+		return 0;
+	};
+	if (m1.setMaxTorque(4, 150) == 1) {
+		printf("Press any key to terminate...\n");
+		getchar();
+		return 0;
+	};
 	
 	while (1)
 	{
@@ -165,7 +193,7 @@ int main()
 			getchar();
 			break;
 		};
-		if (m1.move(4, 90) == 1) {
+		if (m1.move(4, 0) == 1) {
 			printf("Move failed, press any key to terminate...\n");
 			getchar();
 			break;
@@ -207,8 +235,56 @@ int main()
 
 		//check if the motor has reached destination
 		}
-	while ((abs(m1.dxl_goal_position[0] - m1.dxl_present_position[0]) > thres) || (abs(m1.dxl_goal_position[1] - m1.dxl_present_position[1]) >thres)
-			|| (abs(m1.dxl_goal_position[2] - m1.dxl_present_position[2]) > thres) || (abs(m1.dxl_goal_position[3] - m1.dxl_present_position[3]) > thres));
+	while ((abs(m1.getGoal(1) - m1.getPresent(1)) > thres) || (abs(m1.getGoal(2) - m1.getPresent(2)) >thres)
+			|| (abs(m1.getGoal(3) - m1.getPresent(3)) > thres) || (abs(m1.getGoal(4) - m1.getPresent(4)) > thres));
+	}
+
+	man.sendGoal();
+
+	while (1)
+	{
+		printf("Press any key to continue! (or press ESC to quit!)\n");
+		if (getchar() == ESC_ASCII_VALUE)
+			break;
+
+
+		// Syncwrite goal position
+		if (m1.writeAll() == 1) {
+			printf("Syncwrite, press any key to terminate...\n");;
+			getchar();
+			break;
+		};
+
+		do
+		{
+			// Read goal position
+			if (m1.read(1) == 1) {
+				printf("Read failed, press any key to terminate...\n");
+				getchar();
+				break;
+			};
+			if (m1.read(2) == 1) {
+				printf("Read failed, press any key to terminate...\n");
+				getchar();
+				break;
+			};
+			if (m1.read(3) == 1) {
+				printf("Read failed, press any key to terminate...\n");
+				getchar();
+				break;
+			};
+			if (m1.read(4) == 1) {
+				printf("Read failed, press any key to terminate...\n");
+				getchar();
+				break;
+			};
+
+			//print the status
+			m1.print();
+
+			//check if the motor has reached destination
+		} while ((abs(m1.getGoal(1) - m1.getPresent(1)) > thres) || (abs(m1.getGoal(2) - m1.getPresent(2)) >thres)
+			|| (abs(m1.getGoal(3) - m1.getPresent(3)) > thres) || (abs(m1.getGoal(4) - m1.getPresent(4)) > thres));
 	}
 
 	//disable torque

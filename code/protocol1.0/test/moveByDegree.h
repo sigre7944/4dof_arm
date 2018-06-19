@@ -1,7 +1,7 @@
 /* Written Ha Nguyen
 * Based on the original by Ryu Woon Jung (Leon)
 *
-* Test code for the four motors of the arm
+* Function for initializing the motors as well as moving them by degree
 *
 *
 * DXL motors used: 1 MX64-AT, 1 MX-28 and 2 AX-12A's
@@ -46,7 +46,9 @@ private:
 	const int min_value[4] = { 1100, 150, 220, 200 };
 	const int max_value[4] = { 2100, 1020, 500, 500 };
 
-
+	int dxl_goal_position[4] = { 200, 200, 200, 200 };  // Goal position
+	uint16_t dxl_present_position[4] = { 0, 0, 0, 0 };
+	int max_torque[4];
 	int index = 0;
 	int dxl_comm_result = COMM_TX_FAIL;            
 	bool dxl_addparam_result = false;               
@@ -54,6 +56,11 @@ private:
 
 	uint8_t dxl_error = 0;                          // Dynamixel error
 	uint8_t param_goal_position[2];
+
+	//dynamixel initialization
+	dynamixel::PortHandler *portHandler = dynamixel::PortHandler::getPortHandler(DEVICENAME);
+	dynamixel::PacketHandler *packetHandler = dynamixel::PacketHandler::getPacketHandler(PROTOCOL_VERSION);
+	dynamixel::GroupSyncWrite group = dynamixel::GroupSyncWrite(portHandler, packetHandler, ADDR_MX_GOAL_POSITION, LEN_MX_GOAL_POSITION);
 
 
 public:
@@ -65,28 +72,24 @@ public:
 	int move(int id, int degree);
 
 	//setting up function
-	int checkPort(void);
-	int setBaudRate(void);
-	int setMaxTorque(int id, int torque);
-	int enableTorque(int id);
-	int writeAll(void);
-	int read(int id);
-	void print(void);
-	int disableTorque(int id);
-	void closePort(void);
+	int checkPort(void); //open port
+	int setBaudRate(void); //set Baudrate
+	int setMaxTorque(int id, int torque); //set the torque for EACH motor
+	int enableTorque(int id); //enable torque of EACH motor
+	int writeAll(void); //write all goal value into syncwrite
+	int read(int id); //read the current value of EACH motor
+	void print(void); //print current and goal value of ALL motor
+	int disableTorque(int id); //disable torque of EACH motor
+	void closePort(void); //close communication port
 
 
-	//getter and setter
+	//getter
 	int getGoal(int id) const;
 	int getPresent(int id) const;
 	int getThreshold() const;
+	int getMaxTorque(int id) const;
 
-	int dxl_goal_position[4] = { 200, 200, 200, 200 };  // Goal position
-	uint16_t dxl_present_position[4] = { 0, 0, 0, 0 };
-
-	dynamixel::PortHandler *portHandler = dynamixel::PortHandler::getPortHandler(DEVICENAME);
-	dynamixel::PacketHandler *packetHandler = dynamixel::PacketHandler::getPacketHandler(PROTOCOL_VERSION);
-
-	dynamixel::GroupSyncWrite group = dynamixel::GroupSyncWrite(portHandler, packetHandler, ADDR_MX_GOAL_POSITION, LEN_MX_GOAL_POSITION);
+	//setter
+	void setGoal(int id, int pos);
 };
 

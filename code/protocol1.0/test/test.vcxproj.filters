@@ -24,12 +24,18 @@
     <ClCompile Include="inverseKinematics.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="manualAdjust.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="moveByDegree.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="inverseKinematics.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="manualAdjust.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

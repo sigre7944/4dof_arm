@@ -1,7 +1,7 @@
 /* Written Ha Nguyen
-* Reference from the original by Ryu Woon Jung (Leon)
+* Based on the original by Ryu Woon Jung (Leon)
 *
-* Test code for the four motors of the arm
+* Function for initializing the motors as well as moving them by degree value
 *
 *
 * DXL motors used: 1 MX64-AT, 1 MX-28 and 2 AX-12A's
@@ -97,6 +97,7 @@ int moveByDegree::setMaxTorque(int id, int torque){
 	}
 	else
 	{
+		max_torque[id - 1] = torque;
 		printf("The Max Torque has been set successfully\n");
 		return 0;
 	}
@@ -154,6 +155,14 @@ int moveByDegree::getThreshold() const {
 	return DXL_MOVING_STATUS_THRESHOLD;
 }
 
+int moveByDegree::getMaxTorque(int id) const{
+	return max_torque[id - 1];
+}
+	
+void moveByDegree::setGoal(int id, int pos){
+	dxl_goal_position[id - 1] = pos;
+}
+
 int moveByDegree::disableTorque(int id) {
 	dxl_comm_result = packetHandler->write1ByteTxRx(portHandler, id, ADDR_MX_TORQUE_ENABLE, TORQUE_DISABLE, &dxl_error);
 	if (dxl_comm_result != COMM_SUCCESS)
@@ -166,7 +175,7 @@ int moveByDegree::disableTorque(int id) {
 		packetHandler->printRxPacketError(dxl_error);
 		return 1;
 	}
-	printf("Torque Disabled \n", id);
+	printf("[ID:%03d] Torque disabled", id);
 	return 0;
 }
 
