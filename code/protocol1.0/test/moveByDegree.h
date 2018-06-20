@@ -46,7 +46,7 @@ private:
 	const int min_value[4] = { 1100, 150, 220, 200 };
 	const int max_value[4] = { 2100, 1020, 500, 500 };
 
-	int dxl_goal_position[4] = { 200, 200, 200, 200 };  // Goal position
+	int dxl_goal_position[4];  // Goal position
 	uint16_t dxl_present_position[4] = { 0, 0, 0, 0 };
 	int max_torque[4];
 	int index = 0;
@@ -70,6 +70,8 @@ public:
 	int calculateUnit(int id);
 	int checkDegree(int id, int degree);
 	int move(int id, int degree);
+	int autoMove(int id);
+	void clearAll();
 
 	//setting up function
 	int checkPort(void); //open port

@@ -15,7 +15,7 @@ class manualAdjust
 {
 private:
 	int mode = 0; //0 for normal mode, 1 for record mode
-	int dxl_goal_position[4] = { 200, 200, 200, 200 };  // Goal position
+	int goal_position[4] = { 200, 200, 200, 200 };  // Goal position
 	moveByDegree *m_;
 
 public:

@@ -84,6 +84,7 @@ int main()
 {
 	moveByDegree m1 = moveByDegree();
 	manualAdjust man = manualAdjust();
+	man.init(&m1);
 	int thres = m1.getThreshold();
 
 	// Open port
@@ -95,28 +96,6 @@ int main()
 
 	//Set Baudrate
 	if (m1.setBaudRate() == 1) {
-		printf("Press any key to terminate...\n");
-		getchar();
-		return 0;
-	};
-
-	//Set Max Torque
-	if (m1.setMaxTorque(1, 150) == 1) {
-		printf("Press any key to terminate...\n");
-		getchar();
-		return 0;
-	};
-	if (m1.setMaxTorque(2, 700) == 1) {
-		printf("Press any key to terminate...\n");
-		getchar();
-		return 0;
-	};
-	if (m1.setMaxTorque(3, 200) == 1) {
-		printf("Press any key to terminate...\n");
-		getchar();
-		return 0;
-	};
-	if (m1.setMaxTorque(4, 150) == 1) {
 		printf("Press any key to terminate...\n");
 		getchar();
 		return 0;
@@ -144,9 +123,8 @@ int main()
 		return 0;
 	};
 
-	man.init(&m1);
 	man.loosenGrip();
-	sleep_for(3s);
+	sleep_for(7s);
 	man.newGoal();
 
 	//Set Max Torque
@@ -170,41 +148,40 @@ int main()
 		getchar();
 		return 0;
 	};
+
+	//write each value for moving the motor in form of id-theta value in degree to move to
+	if (m1.move(1, 0) == 1) {
+		printf("Move failed, press any key to terminate...\n");
+		getchar();
+		return 0;
+	};
+	if (m1.move(2, 20) == 1) {
+		printf("Move failed, press any key to terminate...\n");
+		getchar();
+		return 0;
+	};
+	if (m1.move(3, 90) == 1) {
+		printf("Move failed, press any key to terminate...\n");
+		getchar();
+		return 0;
+	};
+	if (m1.move(4, 0) == 1) {
+		printf("Move failed, press any key to terminate...\n");
+		getchar();
+		return 0;
+	};
 	
-	while (1)
-	{
-		printf("Press any key to continue! (or press ESC to quit!)\n");
-		if (getchar() == ESC_ASCII_VALUE)
-			break;
 
-		//write each value for moving the motor in form of id-theta value in degree to move to
-		if (m1.move(1, 90) == 1) {
-			printf("Move failed, press any key to terminate...\n");
-			getchar();
-			break;
-		};
-		if (m1.move(2, 90) == 1) {
-			printf("Move failed, press any key to terminate...\n");
-			getchar();
-			break;
-		};
-		if (m1.move(3, 90) == 1) {
-			printf("Move failed, press any key to terminate...\n");
-			getchar();
-			break;
-		};
-		if (m1.move(4, 0) == 1) {
-			printf("Move failed, press any key to terminate...\n");
-			getchar();
-			break;
-		};
+	printf("Press any key to continue! (or press ESC to quit!)\n");
+	if (getchar() == ESC_ASCII_VALUE) return 0;
 
-		// Syncwrite goal position
-		if (m1.writeAll() == 1) {
-			printf("Syncwrite, press any key to terminate...\n");;
-			getchar();
-			break;
-		};
+
+	// Syncwrite goal position
+	if (m1.writeAll() == 1) {
+		printf("Syncwrite, press any key to terminate...\n");;
+		getchar();
+		return 0;
+	};
 
 	do
 		{
@@ -237,55 +214,79 @@ int main()
 		}
 	while ((abs(m1.getGoal(1) - m1.getPresent(1)) > thres) || (abs(m1.getGoal(2) - m1.getPresent(2)) >thres)
 			|| (abs(m1.getGoal(3) - m1.getPresent(3)) > thres) || (abs(m1.getGoal(4) - m1.getPresent(4)) > thres));
-	}
 
+
+	m1.clearAll();
+	sleep_for(1s);
 	man.sendGoal();
+	printf("Press any key to continue! (or press ESC to quit!)\n");
+	getchar();
+	if (getchar() == ESC_ASCII_VALUE) return 0;
 
-	while (1)
+	//Move according to sent position
+	if (m1.autoMove(1) == 1) {
+		printf("Auto move failed, press any key to terminate...\n");
+		getchar();
+		return 0;
+	};
+	if (m1.autoMove(2) == 1) {
+		printf("Auto move failed, press any key to terminate...\n");
+		getchar();
+		return 0;
+	};
+	if (m1.autoMove(3) == 1) {
+		printf("Auto move failed, press any key to terminate...\n");
+		getchar();
+		return 0;
+	};
+	if (m1.autoMove(4) == 1) {
+		printf("Auto move failed, press any key to terminate...\n");
+		getchar();
+		return 0;
+	};
+
+	// Syncwrite goal position
+	if (m1.writeAll() == 1) {
+		printf("Syncwrite, press any key to terminate...\n");;
+		getchar();
+		return 0;
+	};
+			
+	do
 	{
-		printf("Press any key to continue! (or press ESC to quit!)\n");
-		if (getchar() == ESC_ASCII_VALUE)
+		// Read goal position
+		if (m1.read(1) == 1) {
+			printf("Read failed, press any key to terminate...\n");
+			getchar();
 			break;
-
-
-		// Syncwrite goal position
-		if (m1.writeAll() == 1) {
-			printf("Syncwrite, press any key to terminate...\n");;
+		};
+		if (m1.read(2) == 1) {
+			printf("Read failed, press any key to terminate...\n");
+			getchar();
+			break;
+		};
+		if (m1.read(3) == 1) {
+			printf("Read failed, press any key to terminate...\n");
+			getchar();
+			break;
+		};
+		if (m1.read(4) == 1) {
+			printf("Read failed, press any key to terminate...\n");
 			getchar();
 			break;
 		};
 
-		do
-		{
-			// Read goal position
-			if (m1.read(1) == 1) {
-				printf("Read failed, press any key to terminate...\n");
-				getchar();
-				break;
-			};
-			if (m1.read(2) == 1) {
-				printf("Read failed, press any key to terminate...\n");
-				getchar();
-				break;
-			};
-			if (m1.read(3) == 1) {
-				printf("Read failed, press any key to terminate...\n");
-				getchar();
-				break;
-			};
-			if (m1.read(4) == 1) {
-				printf("Read failed, press any key to terminate...\n");
-				getchar();
-				break;
-			};
-
-			//print the status
-			m1.print();
-
-			//check if the motor has reached destination
-		} while ((abs(m1.getGoal(1) - m1.getPresent(1)) > thres) || (abs(m1.getGoal(2) - m1.getPresent(2)) >thres)
+		//print the status
+		m1.print();
+	
+	//check if the motor has reached destination
+	} while ((abs(m1.getGoal(1) - m1.getPresent(1)) > thres) || (abs(m1.getGoal(2) - m1.getPresent(2)) >thres)
 			|| (abs(m1.getGoal(3) - m1.getPresent(3)) > thres) || (abs(m1.getGoal(4) - m1.getPresent(4)) > thres));
-	}
+
+	m1.clearAll();
+	printf("Press any key to continue! (or press ESC to quit!)\n");
+	getchar();
+	if (getchar() == ESC_ASCII_VALUE) return 0;
 
 	//disable torque
 	if (m1.disableTorque(1) == 1) {

@@ -47,14 +47,31 @@ int moveByDegree::move(int id, int degree) {
 	}
 }
 
+int moveByDegree::autoMove(int id) {
+		// Allocate goal position value into byte array
+		param_goal_position[0] = DXL_LOBYTE(dxl_goal_position[id - 1]);
+		param_goal_position[1] = DXL_HIBYTE(dxl_goal_position[id - 1]);
+
+		dxl_addparam_result = group.addParam(id, param_goal_position);//already made initialize
+		if (dxl_addparam_result != true)
+		{
+			fprintf(stderr, "[ID:%03d] groupSyncWrite addparam failed", id);
+			return 1;
+		}
+		return 0;
+}
+
 int moveByDegree::writeAll(void) {
 	dxl_comm_result = group.txPacket();
 	if (dxl_comm_result != COMM_SUCCESS) { 
 		packetHandler->printTxRxResult(dxl_comm_result); 
 		return 1;
 	}
-	//group.clearParam();
 	return 0;
+}
+
+void moveByDegree::clearAll() {
+	group.clearParam();
 }
 
 int moveByDegree::checkPort(void) {
@@ -161,6 +178,7 @@ int moveByDegree::getMaxTorque(int id) const{
 	
 void moveByDegree::setGoal(int id, int pos){
 	dxl_goal_position[id - 1] = pos;
+	printf("[ID:%03d] Goal Changed:%03d\n", id, pos);
 }
 
 int moveByDegree::disableTorque(int id) {
@@ -175,7 +193,7 @@ int moveByDegree::disableTorque(int id) {
 		packetHandler->printRxPacketError(dxl_error);
 		return 1;
 	}
-	printf("[ID:%03d] Torque disabled", id);
+	printf("[ID:%03d] Torque disabled\n", id);
 	return 0;
 }
 
