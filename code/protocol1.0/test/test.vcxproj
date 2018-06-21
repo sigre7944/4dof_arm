@@ -131,11 +131,15 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\test.cpp" />
+    <ClCompile Include="dependency.cpp" />
+    <ClCompile Include="control.cpp" />
     <ClCompile Include="inverseKinematics.cpp" />
     <ClCompile Include="manualAdjust.cpp" />
     <ClCompile Include="moveByDegree.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="dependency.h" />
+    <ClInclude Include="control.h" />
     <ClInclude Include="inverseKinematics.h" />
     <ClInclude Include="manualAdjust.h" />
     <ClInclude Include="moveByDegree.h" />

@@ -27,6 +27,12 @@
     <ClCompile Include="manualAdjust.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="dependency.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="control.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="moveByDegree.h">
@@ -36,6 +42,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="manualAdjust.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="dependency.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="control.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

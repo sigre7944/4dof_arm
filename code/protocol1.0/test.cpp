@@ -1,5 +1,5 @@
 /* Written Ha Nguyen
-* Reference from the original by Ryu Woon Jung (Leon)
+*
 *
 * Test code for the four motors of the arm
 *
@@ -8,120 +8,28 @@
 * Tested using USB2Dynamixel and SMPS2Dynamixel with a 12V/5A Powersource
 */
 
-
-#ifdef __linux__
-#include <unistd.h>
-#include <fcntl.h>
-#include <termios.h>
-#elif defined(_WIN32) || defined(_WIN64)
-#include <conio.h>
-#include <chrono>
-#include <thread>
-#endif
-
-#include <stdlib.h>
-#include <stdio.h>
-
-
 #include "./test/inverseKinematics.h" // for inverse kinematics computation
-#include "./test/manualAdjust.h" //for manual adjustment by hand
-
-#define ESC_ASCII_VALUE                 0x1b
-
-using namespace std::this_thread;     // sleep_for, sleep_until
-using namespace std::chrono_literals; // ns, us, ms, s, h, etc.
-using std::chrono::system_clock;
-
-int getchar() //defining getch for different builds
-{
-#if defined(__linux__) || defined(__APPLE__)
-	struct termios oldt, newt;
-	int ch;
-	tcgetattr(STDIN_FILENO, &oldt);
-	newt = oldt;
-	newt.c_lflag &= ~(ICANON | ECHO);
-	tcsetattr(STDIN_FILENO, TCSANOW, &newt);
-	ch = getchar();
-	tcsetattr(STDIN_FILENO, TCSANOW, &oldt);
-	return ch;
-#elif defined(_WIN32) || defined(_WIN64)
-	return _getch();
-#endif
-}
-
-int kbhit(void) //defining kbhit for different builds
-{
-#if defined(__linux__) || defined(__APPLE__)
-	struct termios oldt, newt;
-	int ch;
-	int oldf;
-
-	tcgetattr(STDIN_FILENO, &oldt);
-	newt = oldt;
-	newt.c_lflag &= ~(ICANON | ECHO);
-	tcsetattr(STDIN_FILENO, TCSANOW, &newt);
-	oldf = fcntl(STDIN_FILENO, F_GETFL, 0);
-	fcntl(STDIN_FILENO, F_SETFL, oldf | O_NONBLOCK);
-
-	ch = getchar();
-
-	tcsetattr(STDIN_FILENO, TCSANOW, &oldt);
-	fcntl(STDIN_FILENO, F_SETFL, oldf);
-
-	if (ch != EOF)
-	{
-		ungetc(ch, stdin);
-		return 1;
-	}
-
-	return 0;
-#elif defined(_WIN32) || defined(_WIN64)
-	return _kbhit();
-#endif
-}
+#include "./test/control.h" //for manipulating all action using the STATE input
 
 int main()
 {
-	moveByDegree m1 = moveByDegree();
-	manualAdjust man = manualAdjust();
+	moveByDegree m1 = moveByDegree(); //initiate for setting up functions and move motor by degree value
+	manualAdjust man = manualAdjust(); //initate for manual adjusting to eating position
+	control con = control(); //initate for all controlling command
 	man.init(&m1);
+	con.init(&m1, &man);
+
 	int thres = m1.getThreshold();
 
-	// Open port
-	if (m1.checkPort() == 1) {
-		printf("Press any key to terminate...\n");
-		getchar();
-		return 0;
-	};
+	con.startup(); //connect to the motors and basic setting
 
-	//Set Baudrate
-	if (m1.setBaudRate() == 1) {
-		printf("Press any key to terminate...\n");
-		getchar();
-		return 0;
-	};
-
-	// Enable Torque
-	if (m1.enableTorque(1) == 1) {
-		printf("Press any key to terminate...\n");
-		getchar();
-		return 0;
-	};
-	if (m1.enableTorque(2) == 1) {
-		printf("Press any key to terminate...\n");
-		getchar();
-		return 0;
-	};
-	if (m1.enableTorque(3) == 1) {
-		printf("Press any key to terminate...\n");
-		getchar();
-		return 0;
-	};
-	if (m1.enableTorque(4) == 1) {
-		printf("Press any key to terminate...\n");
-		getchar();
-		return 0;
-	};
+	while (1) {
+		if (con.getState() == 1)
+		{
+			break;
+		};
+	}
+	
 
 	man.loosenGrip();
 	sleep_for(7s);
@@ -133,7 +41,7 @@ int main()
 		getchar();
 		return 0;
 	};
-	if (m1.setMaxTorque(2, 700) == 1) {
+	if (m1.setMaxTorque(2, 500) == 1) {
 		printf("Press any key to terminate...\n");
 		getchar();
 		return 0;
@@ -155,7 +63,7 @@ int main()
 		getchar();
 		return 0;
 	};
-	if (m1.move(2, 20) == 1) {
+	if (m1.move(2, 5) == 1) {
 		printf("Move failed, press any key to terminate...\n");
 		getchar();
 		return 0;
