@@ -28,34 +28,13 @@ int main()
 		{
 			break;
 		};
+		m1.clearAll();
+		printf("Press any key to continue! (or press ESC to quit!)\n");
+		getchar();
+		if (getchar() == ESC_ASCII_VALUE) return 0;
 	}
+
 	
-
-	man.loosenGrip();
-	sleep_for(7s);
-	man.newGoal();
-
-	//Set Max Torque
-	if (m1.setMaxTorque(1, 150) == 1) {
-		printf("Press any key to terminate...\n");
-		getchar();
-		return 0;
-	};
-	if (m1.setMaxTorque(2, 500) == 1) {
-		printf("Press any key to terminate...\n");
-		getchar();
-		return 0;
-	};
-	if (m1.setMaxTorque(3, 200) == 1) {
-		printf("Press any key to terminate...\n");
-		getchar();
-		return 0;
-	};
-	if (m1.setMaxTorque(4, 150) == 1) {
-		printf("Press any key to terminate...\n");
-		getchar();
-		return 0;
-	};
 
 	//write each value for moving the motor in form of id-theta value in degree to move to
 	if (m1.move(1, 0) == 1) {
@@ -78,10 +57,30 @@ int main()
 		getchar();
 		return 0;
 	};
+
+	//Set Max Torque
+	if (m1.setMaxTorque(1, 150) == 1) {
+		printf("Press any key to terminate...\n");
+		getchar();
+		return 0;
+	};
+	if (m1.setMaxTorque(2, 500) == 1) {
+		printf("Press any key to terminate...\n");
+		getchar();
+		return 0;
+	};
+	if (m1.setMaxTorque(3, 200) == 1) {
+		printf("Press any key to terminate...\n");
+		getchar();
+		return 0;
+	};
+	if (m1.setMaxTorque(4, 150) == 1) {
+		printf("Press any key to terminate...\n");
+		getchar();
+		return 0;
+	};
 	
 
-	printf("Press any key to continue! (or press ESC to quit!)\n");
-	if (getchar() == ESC_ASCII_VALUE) return 0;
 
 
 	// Syncwrite goal position
@@ -90,7 +89,7 @@ int main()
 		getchar();
 		return 0;
 	};
-
+	 
 	do
 		{
 		// Read goal position
@@ -191,7 +190,6 @@ int main()
 	} while ((abs(m1.getGoal(1) - m1.getPresent(1)) > thres) || (abs(m1.getGoal(2) - m1.getPresent(2)) >thres)
 			|| (abs(m1.getGoal(3) - m1.getPresent(3)) > thres) || (abs(m1.getGoal(4) - m1.getPresent(4)) > thres));
 
-	m1.clearAll();
 	printf("Press any key to continue! (or press ESC to quit!)\n");
 	getchar();
 	if (getchar() == ESC_ASCII_VALUE) return 0;

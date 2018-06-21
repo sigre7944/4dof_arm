@@ -35,9 +35,6 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="moveByDegree.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="inverseKinematics.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -48,6 +45,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="control.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="moveByDegree.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

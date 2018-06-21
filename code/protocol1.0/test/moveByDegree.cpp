@@ -61,6 +61,18 @@ int moveByDegree::autoMove(int id) {
 		return 0;
 }
 
+void moveByDegree::stayStill() {
+	this->autoMove(1);
+	this->autoMove(2);
+	this->autoMove(3);
+	this->autoMove(4);
+	this->writeAll();
+	this->clearAll();
+
+	//printf("Stay still");
+	//return 0;
+}
+
 int moveByDegree::writeAll(void) {
 	dxl_comm_result = group.txPacket();
 	if (dxl_comm_result != COMM_SUCCESS) { 
@@ -115,7 +127,7 @@ int moveByDegree::setMaxTorque(int id, int torque){
 	else
 	{
 		max_torque[id - 1] = torque;
-		printf("The Max Torque has been set successfully\n");
+		//printf("The Max Torque has been set successfully\n");
 		return 0;
 	}
 }
@@ -151,6 +163,7 @@ int moveByDegree::read(int id) {
 		packetHandler->printRxPacketError(dxl_error);
 		return 1;
 	}
+	//printf("Reading...");
 	return 0;
 }
 

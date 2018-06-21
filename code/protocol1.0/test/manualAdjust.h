@@ -15,7 +15,7 @@ class manualAdjust
 {
 private:
 	int mode = 0; //0 for normal mode, 1 for record mode
-	int goal_position[4] = { 200, 200, 200, 200 };  // Goal position
+	int goal_position[4] = { 1500, 500, 250, 250 };  // Goal position
 	moveByDegree *m_;
 
 public:
@@ -26,7 +26,6 @@ public:
 
 	int loosenGrip();
 	int tightenGrip();
-	int checkForInput(int value);
 	void newGoal();
 	void sendGoal();
 };

@@ -140,4 +140,5 @@ d:\study\02 waseda\coding\test code with dynamixel sdk\code\protocol1.0\test\dep
 d:\study\02 waseda\coding\test code with dynamixel sdk\code\protocol1.0\test\dependency.h(28): warning C4273: 'kbhit': inconsistent dll linkage
   d:\windows kits\10\include\10.0.17134.0\ucrt\conio.h(459): note: see previous definition of 'kbhit'
 d:\study\02 waseda\coding\test code with dynamixel sdk\code\protocol1.0\test\control.cpp(50): warning C4715: 'control::startup': not all control paths return a value
+d:\study\02 waseda\coding\test code with dynamixel sdk\code\protocol1.0\test\control.cpp(95): warning C4715: 'control::manual': not all control paths return a value
   test.vcxproj -> D:\Study\02 WASEDA\Coding\Test Code with Dynamixel SDK\code\protocol1.0\test\Debug\test.exe

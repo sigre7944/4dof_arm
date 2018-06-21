@@ -21,7 +21,7 @@ int manualAdjust::loosenGrip() {
 	if (m_->setMaxTorque(1, 0) == 1) {
 		return 1;
 	};
-	if (m_->setMaxTorque(2, 100) == 1) {
+	if (m_->setMaxTorque(2, 50) == 1) {
 		return 1;
 	};
 	if (m_->setMaxTorque(3, 50) == 1) {
@@ -51,10 +51,6 @@ int manualAdjust::tightenGrip() {
 	return 0;
 }
 
-int manualAdjust::checkForInput(int value) {
-	mode = value;
-	return 0;
-}
 
 void manualAdjust::newGoal() {
 	printf("Reading in new goal\n");
