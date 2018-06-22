@@ -71,7 +71,6 @@ public:
 	int checkDegree(int id, int degree);
 	int move(int id, int degree);
 	int autoMove(int id);
-	void stayStill();
 	void clearAll();
 
 	//setting up function

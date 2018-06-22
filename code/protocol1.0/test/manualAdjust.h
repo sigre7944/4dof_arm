@@ -1,6 +1,6 @@
 /* Written Ha Nguyen
 *
-* Function for initializing the motors as well as moving them by degree value
+* Function for teaching the arm the eating position
 *
 *
 * DXL motors used: 1 MX64-AT, 1 MX-28 and 2 AX-12A's

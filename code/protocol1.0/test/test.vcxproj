@@ -134,6 +134,7 @@
     <ClCompile Include="dependency.cpp" />
     <ClCompile Include="control.cpp" />
     <ClCompile Include="inverseKinematics.cpp" />
+    <ClCompile Include="log.cpp" />
     <ClCompile Include="manualAdjust.cpp" />
     <ClCompile Include="moveByDegree.cpp" />
   </ItemGroup>
@@ -141,6 +142,7 @@
     <ClInclude Include="dependency.h" />
     <ClInclude Include="control.h" />
     <ClInclude Include="inverseKinematics.h" />
+    <ClInclude Include="log.h" />
     <ClInclude Include="manualAdjust.h" />
     <ClInclude Include="moveByDegree.h" />
   </ItemGroup>

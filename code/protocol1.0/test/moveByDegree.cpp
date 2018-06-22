@@ -61,17 +61,6 @@ int moveByDegree::autoMove(int id) {
 		return 0;
 }
 
-void moveByDegree::stayStill() {
-	this->autoMove(1);
-	this->autoMove(2);
-	this->autoMove(3);
-	this->autoMove(4);
-	this->writeAll();
-	this->clearAll();
-
-	//printf("Stay still");
-	//return 0;
-}
 
 int moveByDegree::writeAll(void) {
 	dxl_comm_result = group.txPacket();
