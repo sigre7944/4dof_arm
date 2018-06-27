@@ -13,6 +13,11 @@ moveByDegree::moveByDegree()
 {
 }
 
+
+void moveByDegree::init(logger *log) {
+	log_ = log;
+}
+
 int moveByDegree::checkDegree(int id, int degree)
 {
 	if (degree > max_degree[id-1] || degree < min_degree[id-1]) return 0;
@@ -27,6 +32,7 @@ int moveByDegree::calculateUnit(int id) {
 int moveByDegree::move(int id, int degree) {
 	if (checkDegree(id, degree) == false) {
 		fprintf(stderr, "[ID:%03d] The degree is wrong", id);
+		log_->Add(logWARNING) << "The degree is wrong!" << endl;
 
 		return 1;
 	}
@@ -41,6 +47,7 @@ int moveByDegree::move(int id, int degree) {
 		if (dxl_addparam_result != true)
 		{
 			fprintf(stderr, "[ID:%03d] groupSyncWrite addparam failed", id);
+			log_->Add(logERROR) << " [ID:%03d] groupSyncWrite addparam failed" << endl;
 			return 1;
 		}
 		return 0;
@@ -56,6 +63,7 @@ int moveByDegree::autoMove(int id) {
 		if (dxl_addparam_result != true)
 		{
 			fprintf(stderr, "[ID:%03d] groupSyncWrite addparam failed", id);
+			log_->Add(logERROR) << " [ID:%03d] groupSyncWrite addparam failed" << endl;
 			return 1;
 		}
 		return 0;
@@ -79,11 +87,13 @@ int moveByDegree::checkPort(void) {
 	if (portHandler->openPort())
 	{
 		printf("Succeeded to open the port!\n");
+		log_->Add(logINFO) << "Port Opened" << endl;
 		return 0;
 	}
 	else
 	{
 		printf("Failed to open the port!\n");
+		log_->Add(logERROR) << " Failed to open the port!" << endl;
 		return 1;
 	}
 }
@@ -92,11 +102,13 @@ int moveByDegree::setBaudRate(void) {
 	if (portHandler->openPort())
 	{
 		printf("Succeeded to set baudrate!\n");
+		log_->Add(logINFO) << "Baudrate Set" << endl;
 		return 0;
 	}
 	else
 	{
 		printf("Failed to open the port!\n");
+		log_->Add(logERROR) << " Failed to open the port!" << endl;
 		return 1;
 	}
 }

@@ -13,8 +13,9 @@ manualAdjust::manualAdjust()
 {
 }
 
-void manualAdjust::init(moveByDegree *m) {
+void manualAdjust::init(moveByDegree *m, logger *log) {
 	m_ = m;
+	log_ = log;
 }
 
 int manualAdjust::loosenGrip() {
@@ -31,6 +32,7 @@ int manualAdjust::loosenGrip() {
 		return 1;
 	}
 	printf("Loosening Grip\n");
+	log_->Add(logINFO) << "Loosening Grip" << endl;
 	return 0;
 }
 
@@ -48,12 +50,14 @@ int manualAdjust::tightenGrip() {
 		return 1;
 	}
 	printf("Tightening Grip\n");
+	log_->Add(logINFO) << "Tightening Grip" << endl;
 	return 0;
 }
 
 
 void manualAdjust::newGoal() {
 	printf("Reading in new goal\n");
+	log_->Add(logINFO) << "Reading in new goal" << endl;
 	m_->read(1);
 	goal_position[0] = m_->getPresent(1);
 	printf("[ID:%03d] GoalPos:%03d\n", 1, m_->getPresent(1));
@@ -78,6 +82,7 @@ void manualAdjust::sendGoal() {
 	m_->setGoal(3, goal_position[2]);
 	m_->setGoal(4, goal_position[3]);
 	printf("Sending new goal\n");
+	log_->Add(logINFO) << "Sending in new goal" << endl;
 }
 
 manualAdjust::~manualAdjust()

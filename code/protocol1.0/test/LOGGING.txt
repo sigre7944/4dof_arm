@@ -1,0 +1,11 @@
+ 17:27:02.000 ERROR:  Failed to open the port!
+ 17:27:42.000 INFO: Port Opened
+ 17:27:42.125 INFO: Baudrate Set
+ 17:27:43.891 INFO: Loosening Grip
+ 17:27:47.141 INFO: Reading in new goal
+ 17:27:47.266 INFO: Eating position set
+ 17:29:34.000 INFO: Port Opened
+ 17:29:35.125 INFO: Baudrate Set
+ 17:29:38.656 INFO: Reading in new goal
+ 17:29:38.718 INFO: Sending in new goal
+ 17:29:38.781 INFO: Eating position set

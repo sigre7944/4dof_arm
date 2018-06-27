@@ -10,8 +10,7 @@
 
 #pragma once
 
-#include "./manualAdjust.h"
-#include "dependency.h"
+#include "manualAdjust.h"
 
 class control
 {
@@ -20,12 +19,13 @@ private:
 	int input = -1;
 	moveByDegree *move_;
 	manualAdjust *man_;
+	logger *log_;
 
 public:
 	control();
 	~control();
 
-	void init(moveByDegree *move, manualAdjust *man);
+	void init(moveByDegree *move, manualAdjust *man, logger *log);
 	int startup(); // all work needed for initializing the systems
 	int getState(); //get the command from the user
 	void printState(); //print the command from the user

@@ -14,10 +14,11 @@ control::control()
 {
 }
 
-void control::init (moveByDegree *move, manualAdjust *man)
+void control::init (moveByDegree *move, manualAdjust *man, logger *log)
 {
 	move_ = move;
 	man_ = man;
+	log_ = log;
 }
 
 int control::startup() 
@@ -72,7 +73,7 @@ int control::getState()
 	if (input == ESC_ASCII_VALUE) return 1;
 	switch (input) {
 	case 0x31 : 
-		state = 255; //change to the eating state
+		state = 255; 
 		manual();
 		printf("Press any key but 1 to continue (or press ESC to quit!)\n");
 		if (getchar() == ESC_ASCII_VALUE) return 1;
@@ -109,6 +110,7 @@ int control::manual()
 		man_->sendGoal();
 		stayStill();
 		printf("Eating position set\n");
+		log_->Add(logINFO) << "Eating position set" << endl;
 	}
 	return 0;
 }
@@ -116,21 +118,25 @@ int control::manual()
 int control::move() {
 	if (move_->move(1, 0) == 1) {
 		printf("Move failed, press any key to terminate...\n");
+		log_->Add(logERROR) << "Move Failed" << endl;
 		getchar();
 		return 1;
 	};
 	if (move_->move(2, 5) == 1) {
 		printf("Move failed, press any key to terminate...\n");
+		log_->Add(logERROR) << "Move Failed" << endl;
 		getchar();
 		return 1;
 	};
 	if (move_->move(3, 90) == 1) {
 		printf("Move failed, press any key to terminate...\n");
+		log_->Add(logERROR) << "Move Failed" << endl;
 		getchar();
 		return 1;
 	};
 	if (move_->move(4, 0) == 1) {
 		printf("Move failed, press any key to terminate...\n");
+		log_->Add(logERROR) << "Move Failed" << endl;
 		getchar();
 		return 1;
 	};
@@ -149,21 +155,25 @@ int control::run() {
 		// Read goal position
 		if (move_->read(1) == 1) {
 			printf("Read failed, press any key to terminate...\n");
+			log_->Add(logERROR) << "Read Failed" << endl;
 			getchar();
 			break;
 		};
 		if (move_->read(2) == 1) {
 			printf("Read failed, press any key to terminate...\n");
+			log_->Add(logERROR) << "Read Failed" << endl;
 			getchar();
 			break;
 		};
 		if (move_->read(3) == 1) {
 			printf("Read failed, press any key to terminate...\n");
+			log_->Add(logERROR) << "Read Failed" << endl;
 			getchar();
 			break;
 		};
 		if (move_->read(4) == 1) {
 			printf("Read failed, press any key to terminate...\n");
+			log_->Add(logERROR) << "Read Failed" << endl;
 			getchar();
 			break;
 		};
@@ -184,21 +194,25 @@ int control::eat() {
 
 	if (move_->autoMove(1) == 1) {
 		printf("Auto move failed, press any key to terminate...\n");
+		log_->Add(logERROR) << "Auto Move Failed" << endl;
 		getchar();
 		return 1;
 	};
 	if (move_->autoMove(2) == 1) {
 		printf("Auto move failed, press any key to terminate...\n");
+		log_->Add(logERROR) << "Auto Move Failed" << endl;
 		getchar();
 		return 1;
 	};
 	if (move_->autoMove(3) == 1) {
 		printf("Auto move failed, press any key to terminate...\n");
+		log_->Add(logERROR) << "Auto Move Failed" << endl;
 		getchar();
 		return 1;
 	};
 	if (move_->autoMove(4) == 1) {
 		printf("Auto move failed, press any key to terminate...\n");
+		log_->Add(logERROR) << "Auto Move Failed" << endl;
 		getchar();
 		return 1;
 	};
@@ -225,21 +239,25 @@ void control::stayStill() {
 int control::shutDown() {
 	if (move_->disableTorque(1) == 1) {
 		printf("Cannot disabble torque, press any key to terminate...\n");
+		log_->Add(logERROR) << "Cannot disabble torque" << endl;
 		getchar();
 		return 1;
 	};
 	if (move_->disableTorque(2) == 1) {
 		printf("Cannot disabble torque, press any key to terminate...\n");
+		log_->Add(logERROR) << "Cannot disabble torque" << endl;
 		getchar();
 		return 1;
 	};
 	if (move_->disableTorque(3) == 1) {
 		printf("Cannot disabble torque, press any key to terminate...\n");
+		log_->Add(logERROR) << "Cannot disabble torque" << endl;
 		getchar();
 		return 1;
 	};
 	if (move_->disableTorque(4) == 1) {
 		printf("Cannot disabble torque, press any key to terminate...\n");
+		log_->Add(logERROR) << "Cannot disabble torque" << endl;
 		getchar();
 		return 1;
 	};

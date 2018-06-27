@@ -9,7 +9,7 @@
 
 #pragma once
 
-#include "./moveByDegree.h"
+#include "moveByDegree.h"
 
 class manualAdjust
 {
@@ -17,12 +17,13 @@ private:
 	int mode = 0; //0 for normal mode, 1 for record mode
 	int goal_position[4] = { 1500, 500, 250, 250 };  // Goal position
 	moveByDegree *m_;
+	logger *log_;
 
 public:
 	manualAdjust();
 	~manualAdjust();
 
-	void init(moveByDegree *m);
+	void init(moveByDegree *m, logger *log);
 
 	int loosenGrip();
 	int tightenGrip();

@@ -8,9 +8,9 @@
 * Tested using USB2Dynamixel and SMPS2Dynamixel with a 12V/5A Powersource
 */
 
-#include <stdio.h>
-#include <stdlib.h>
-#include "dynamixel_sdk.h"  
+
+#include "dependency.h"
+
 
 // Control table address
 #define ADDR_MX_TORQUE_ENABLE           24                  // Control table address is different in Dynamixel model
@@ -40,6 +40,8 @@ using namespace std;
 class moveByDegree
 {
 private:
+	logger *log_;
+
 	const int min_degree[4] = {0, 5, 0, 0};
 	const int max_degree[4] = {90, 90, 90, 90};
 
@@ -66,6 +68,9 @@ private:
 public:
 	moveByDegree();
 	~moveByDegree();
+
+
+	void init(logger *log);
 
 	int calculateUnit(int id);
 	int checkDegree(int id, int degree);

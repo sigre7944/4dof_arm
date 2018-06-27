@@ -14,6 +14,10 @@
 #define DEPENDENCY_H
 #endif
 
+#include "log.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include "dynamixel_sdk.h"  
 
 #ifdef __linux__
 #include <unistd.h>
@@ -25,8 +29,6 @@
 #include <thread>
 #endif
 
-#include <stdlib.h>
-#include <stdio.h>
 
 #define ESC_ASCII_VALUE                 0x1b
 
