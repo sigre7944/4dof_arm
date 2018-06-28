@@ -7,8 +7,8 @@
 * Tested using USB2Dynamixel and SMPS2Dynamixel with a 12V/5A Powersource
 */
 
-#ifndef __LOG_H__
-#define __LOG_H__
+#ifndef __LOGGER_H__
+#define __LOGGER_H__
 
 #define _CRT_SECURE_NO_WARNINGS	//for using sprintf
 
@@ -48,10 +48,7 @@ public:
 	logger();
 	~logger();
 
-	string mes_;
-
-	std::ostringstream& Add(logLevel level = logINFO);
-	static string format();
+	ostringstream& Add(logLevel level = logINFO);
 	static string getTime();
 	static string getLevel(logLevel level);
 

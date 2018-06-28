@@ -61,7 +61,7 @@ std::string logger::getTime()
 
 #include <sys/time.h>
 
-std::string log::getTime()
+std::string logger::getTime()
 {
 	char buffer[11];
 	time_t t;
