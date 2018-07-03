@@ -14,11 +14,12 @@ control::control()
 {
 }
 
-void control::init (moveByDegree *move, manualAdjust *man, logger *log)
+void control::init (moveByDegree *move, manualAdjust *man, logger *log, inverseKinematics *ik)
 {
 	move_ = move;
 	man_ = man;
 	log_ = log;
+	ik_ = ik;
 }
 
 int control::startup() 
@@ -58,6 +59,7 @@ int control::startup()
 		getchar();
 		return 0;
 	};
+	ik_->calAll();
 }
 
 int control::getState()

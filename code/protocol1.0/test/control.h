@@ -11,6 +11,7 @@
 #pragma once
 
 #include "manualAdjust.h"
+#include "inverseKinematics.h"
 
 class control
 {
@@ -19,13 +20,14 @@ private:
 	int input = -1;
 	moveByDegree *move_;
 	manualAdjust *man_;
+	inverseKinematics *ik_;
 	logger *log_;
 
 public:
 	control();
 	~control();
 
-	void init(moveByDegree *move, manualAdjust *man, logger *log);
+	void init(moveByDegree *move, manualAdjust *man, logger *log, inverseKinematics *ik);
 	int startup(); // all work needed for initializing the systems
 	int getState(); //get the command from the user
 	void printState(); //print the command from the user

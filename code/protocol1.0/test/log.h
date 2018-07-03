@@ -20,6 +20,7 @@
 #include <string>
 #include <iostream>
 #include "dependency.h"
+#include <ctime>
 
 #if defined(_WIN32) || defined(_WIN64)
 // Win Socket Header File(s)

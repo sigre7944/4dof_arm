@@ -47,13 +47,21 @@ std::string logger::getTime()
 {
 	const int MAX_LEN = 200;
 	char buffer[MAX_LEN];
-	if (GetTimeFormatA(LOCALE_USER_DEFAULT, 0, 0,
-		"HH':'mm':'ss", buffer, MAX_LEN) == 0)
-		return "Error in getTime()";
+	//if (GetTimeFormatA(LOCALE_USER_DEFAULT, 0, 0,
+	//	"HH':'mm':'ss", buffer, MAX_LEN) == 0)
+	//	return "Error in getTime()";
+	
+	std::time_t rawtime = std::time(0);//get current time
+	struct tm * timeinfo;
+	time(&rawtime);
+	timeinfo = localtime(&rawtime);
 
+	strftime(buffer, sizeof(buffer), "%d-%m-%Y %I:%M:%S", timeinfo);
+	std::string str(buffer);
+	
 	char result[100] = { 0 };
 	static DWORD first = GetTickCount();
-	std::sprintf(result, "%s.%03ld", buffer, (long)(GetTickCount() - first) % 1000);
+	std::sprintf(result, "%s.%03ld", buffer , (long)(GetTickCount() - first) % 1000);
 	return result;
 }
 

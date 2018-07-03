@@ -16,12 +16,13 @@ int main()
 	moveByDegree m1 = moveByDegree(); //initiate for setting up functions and move motor by degree value
 	manualAdjust man = manualAdjust(); //initate for manual adjusting to eating position
 	control con = control(); //initate for all controlling command
-	logger log1 = logger();
-	ostringstream oss;
+	logger log1 = logger(); //initate for logging
+	inverseKinematics ik = inverseKinematics(250, 10, 100, 50);
 
 	m1.init(&log1);
 	man.init(&m1, &log1); //parse the moving functions to manual 
-	con.init(&m1, &man, &log1); //parse the moving and manual functions to CONTROL
+	con.init(&m1, &man, &log1, &ik); //parse the moving and manual functions to CONTROL
+	ik.init(&log1); //give logging about inverse kinematics calculation
 
 	con.startup(); //connect to the motors and basic setting
 
@@ -33,9 +34,9 @@ int main()
 
 		m1.clearAll();
 		sleep_for(500ms);
+		
 	}
 
-	//log1.output2Console();
 	log1.output2File(); //write log file
 
 	con.shutDown();

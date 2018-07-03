@@ -1,22 +1,36 @@
- 17:27:02.000 ERROR:  Failed to open the port!
- 17:27:42.000 INFO: Port Opened
- 17:27:42.125 INFO: Baudrate Set
- 17:27:43.891 INFO: Loosening Grip
- 17:27:47.141 INFO: Reading in new goal
- 17:27:47.266 INFO: Eating position set
- 17:29:34.000 INFO: Port Opened
- 17:29:35.125 INFO: Baudrate Set
- 17:29:38.656 INFO: Reading in new goal
- 17:29:38.718 INFO: Sending in new goal
- 17:29:38.781 INFO: Eating position set
- 13:02:29.000 INFO: Port Opened
- 13:02:29.125 INFO: Baudrate Set
- 13:02:34.187 INFO: Loosening Grip
- 13:02:38.672 INFO: Reading in new goal
- 13:02:38.734 INFO: Sending in new goal
- 13:02:38.797 INFO: Eating position set
- 13:02:41.609 INFO: Sending in new goal
- 13:02:44.031 INFO: Sending in new goal
- 13:02:48.515 INFO: Sending in new goal
- 13:02:51.937 INFO: Sending in new goal
- 13:02:57.453 INFO: Sending in new goal
+ 03-07-2018 11:06:53.000 INFO: Port Opened
+ 03-07-2018 11:06:53.125 INFO: Baudrate Set
+ 03-07-2018 11:06:54.344 INFO: Loosening Grip
+ 03-07-2018 11:06:56.016 INFO: Reading in new goal
+ 03-07-2018 11:06:56.078 INFO: Sending in new goal
+ 03-07-2018 11:06:56.141 INFO: Eating position set
+ 03-07-2018 11:06:58.156 INFO: Sending in new goal
+ 03-07-2018 11:07:00.750 INFO: Sending in new goal
+ 03-07-2018 11:09:16.000 INFO: Port Opened
+ 03-07-2018 11:09:16.125 INFO: Baudrate Set
+ 03-07-2018 11:09:16.187 DEBUG: Value of theta1 is 2.2906
+ 03-07-2018 11:09:16.187 DEBUG: Value of theta3 is -nan(ind)
+ 03-07-2018 11:09:16.187 DEBUG: Value of theta2 is 0
+ 03-07-2018 11:09:16.187 DEBUG: Value of theta4 is -nan(ind)
+ 03-07-2018 11:09:17.109 INFO: Loosening Grip
+ 03-07-2018 11:09:18.250 INFO: Reading in new goal
+ 03-07-2018 11:09:18.312 INFO: Sending in new goal
+ 03-07-2018 11:09:18.375 INFO: Eating position set
+ 03-07-2018 11:09:19.937 INFO: Loosening Grip
+ 03-07-2018 11:09:21.719 INFO: Loosening Grip
+ 03-07-2018 11:09:22.297 INFO: Reading in new goal
+ 03-07-2018 11:09:22.375 INFO: Sending in new goal
+ 03-07-2018 11:09:23.422 INFO: Eating position set
+ 03-07-2018 11:09:25.984 INFO: Sending in new goal
+ 03-07-2018 11:09:28.781 INFO: Sending in new goal
+ 03-07-2018 11:09:33.437 INFO: Sending in new goal
+ 03-07-2018 11:11:24.000 INFO: Port Opened
+ 03-07-2018 11:11:24.141 INFO: Baudrate Set
+ 03-07-2018 11:11:24.204 DEBUG: Value of theta1 is 2.2906
+ 03-07-2018 11:11:24.204 DEBUG: Value of theta3 is -nan(ind)
+ 03-07-2018 11:11:24.204 DEBUG: Value of theta2 is 0
+ 03-07-2018 11:11:24.204 DEBUG: Value of theta4 is -nan(ind)
+ 03-07-2018 11:11:25.250 INFO: Loosening Grip
+ 03-07-2018 11:11:26.891 INFO: Reading in new goal
+ 03-07-2018 11:11:26.938 INFO: Sending in new goal
+ 03-07-2018 11:11:26.000 INFO: Eating position set
