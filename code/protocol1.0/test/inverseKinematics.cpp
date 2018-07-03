@@ -19,6 +19,8 @@ inverseKinematics::inverseKinematics(float px, float py, float pz, float phi)
 	_py = py;
 	_pz = pz;
 	_phi = phi;
+	z1 = _pz - l1 - l0;
+	r1 = _px;
 }
 
 void inverseKinematics::init(logger *log) {
@@ -40,7 +42,7 @@ void inverseKinematics::cal1() { //1st calculation
 }
 
 void inverseKinematics::cal3() { //2nd calculation
-	theta[2] = (acos((pow(z1, 2) + (pow(r1, 2) - pow(l2, 2) - pow(l3, 2)) / (2 * l2*l3))));
+	theta[2] = acos( (pow(z1, 2) + pow(r1, 2) - pow(l2, 2) - pow(l3, 2)) / (2 * l2*l3));
 
 	theta[2] = deg(theta[2]);
 	log_->Add(logDEBUG) << "Value of z1 is " << z1 << endl;
@@ -50,16 +52,17 @@ void inverseKinematics::cal3() { //2nd calculation
 
 void inverseKinematics::cal2() { //3rd calculation
 	float beta = deg(atan2(z1, r1));
-	float psi = deg(acos((pow(z1, 2) + pow(r1, 2) + (l2, 2) - (l3,2)) / (2*sqrt(pow(r1,2) + pow(z1,2))*l2) ));
+	float psi = deg(acos((pow(z1, 2) + pow(r1, 2) + pow(l2, 2) - pow(l3,2)) / (2*sqrt(pow(r1,2) + pow(z1,2))*l2)));
 
 
 	if (theta[2] >= 0) {
-		theta[1] = 90 - beta - psi;
+		theta[1] = 90-(90 - beta - psi);
 	}
 	else if (theta[2] < 0) {
-		theta[1] = 90 - beta + psi;
+		theta[1] = 90-(90 - beta + psi);
 	}
-	theta[1] = deg(theta[1]);
+	log_->Add(logDEBUG) << "Value of psi is " << psi << endl;
+	log_->Add(logDEBUG) << "Value of beta is " << beta << endl;
 	log_->Add(logDEBUG) << "Value of theta2 is " << theta[1] << endl;
 }
 

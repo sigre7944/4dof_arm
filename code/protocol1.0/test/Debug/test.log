@@ -1,4 +1,4 @@
-﻿  inverseKinematics.cpp
+﻿  main.cpp
 d:\study\02 waseda\coding\test code with dynamixel sdk\include\dynamixel_sdk\group_bulk_read.h(51): warning C4251: 'dynamixel::GroupBulkRead::id_list_': class 'std::vector<uint8_t,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of class 'dynamixel::GroupBulkRead'
           with
           [
@@ -139,5 +139,4 @@ d:\study\02 waseda\coding\test code with dynamixel sdk\code\protocol1.0\test\dep
   d:\windows kits\10\include\10.0.17134.0\ucrt\stdio.h(306): note: see previous definition of 'getchar'
 d:\study\02 waseda\coding\test code with dynamixel sdk\code\protocol1.0\test\dependency.h(40): warning C4273: 'kbhit': inconsistent dll linkage
   d:\windows kits\10\include\10.0.17134.0\ucrt\conio.h(459): note: see previous definition of 'kbhit'
-d:\study\02 waseda\coding\test code with dynamixel sdk\code\protocol1.0\test\inversekinematics.cpp(70): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
   test.vcxproj -> D:\Study\02 WASEDA\Coding\Test Code with Dynamixel SDK\code\protocol1.0\test\Debug\test.exe

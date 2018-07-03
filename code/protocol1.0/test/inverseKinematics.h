@@ -24,9 +24,8 @@ private:
 	float theta[4] = { 0 , 0, 0, 0 };
 
 	float _px, _py, _pz, _phi;
+	float z1, r1;
 
-	float z1 = _px - l1;
-	float r1 = sqrt(pow(_px, 2) + pow(_py, 2)) - l4;
 
 	logger *log_;
 

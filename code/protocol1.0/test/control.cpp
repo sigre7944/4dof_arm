@@ -118,25 +118,25 @@ int control::manual()
 }
 
 int control::move() {
-	if (move_->move(1, 0) == 1) {
+	if (move_->move(1, ik_->getTheta(1)) == 1) {
 		printf("Move failed, press any key to terminate...\n");
 		log_->Add(logERROR) << "Move Failed" << endl;
 		getchar();
 		return 1;
 	};
-	if (move_->move(2, 5) == 1) {
+	if (move_->move(2, ik_->getTheta(2)) == 1) {
 		printf("Move failed, press any key to terminate...\n");
 		log_->Add(logERROR) << "Move Failed" << endl;
 		getchar();
 		return 1;
 	};
-	if (move_->move(3, 90) == 1) {
+	if (move_->move(3, ik_->getTheta(3)) == 1) {
 		printf("Move failed, press any key to terminate...\n");
 		log_->Add(logERROR) << "Move Failed" << endl;
 		getchar();
 		return 1;
 	};
-	if (move_->move(4, 0) == 1) {
+	if (move_->move(4, ik_->getTheta(4)) == 1) {
 		printf("Move failed, press any key to terminate...\n");
 		log_->Add(logERROR) << "Move Failed" << endl;
 		getchar();
