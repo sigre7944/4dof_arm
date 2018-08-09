@@ -33,7 +33,6 @@ int main()
 		};
 
 		m1.clearAll();
-		sleep_for(500ms);
 		
 	}
 
@@ -41,8 +40,6 @@ int main()
 
 	con.shutDown();
 
-	//Sleep so there's time to read the error log
-	sleep_for(1s);
 	return 0;
 }
 
