@@ -23,10 +23,10 @@
 #---------------------------------------------------------------------
 
 # *** ENTER THE TARGET NAME HERE ***
-TARGET      = sync_write
+TARGET      = test
 
 # important directories used by assorted rules and other variables
-DIR_DXL    = ../../..
+DIR_DXL    = ../../../..
 DIR_OBJS   = .objects
 
 # compiler options
@@ -48,7 +48,17 @@ LIBRARIES  += -lrt
 #---------------------------------------------------------------------
 # Files
 #---------------------------------------------------------------------
-SOURCES = sync_write.cpp \
+SOURCES = main.cpp \
+					test/dependency.h\
+					test/dependency.cpp\
+					test/logger.h \
+					test/logger.cpp\
+					test/moveByDegree.h \
+					test/moveByDegree.cpp\
+					test/manualAdjust.h \
+					test/manualAdjust.cpp\
+					test/control.h \
+					test/control.cpp\
     # *** OTHER SOURCES GO HERE ***
 
 OBJECTS  = $(addsuffix .o,$(addprefix $(DIR_OBJS)/,$(basename $(notdir $(SOURCES)))))
