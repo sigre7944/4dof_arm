@@ -21,7 +21,7 @@ private:
 	const float l3 = 115;
 	const float l4 = 80;
 	const float alpha2 = -90;
-	float theta[4] = { 0 , 0, 0, 0 };
+	float theta[4] = {0 ,0, 0, 0};
 
 	float _px, _py, _pz, _phi;
 	float z1, r1;
@@ -45,4 +45,3 @@ public:
 	void cal4();
 
 };
-

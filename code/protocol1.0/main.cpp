@@ -17,7 +17,7 @@ int main()
 	manualAdjust man = manualAdjust(); //initate for manual adjusting to eating position
 	control con = control(); //initate for all controlling command
 	logger log1 = logger(); //initate for logging
-	inverseKinematics ik = inverseKinematics(250, 100, 100, 50);
+	inverseKinematics ik = inverseKinematics(250, 50, 200, 50);
 
 	m1.init(&log1);
 	man.init(&m1, &log1); //parse the moving functions to manual 

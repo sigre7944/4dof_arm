@@ -28,7 +28,7 @@
 
 // Default setting
 #define BAUDRATE                        1000000
-#define DEVICENAME                      "COM4"      
+#define DEVICENAME                      "COM3"      
 
 #define TORQUE_ENABLE                   1                   // Value for enabling the torque
 #define TORQUE_DISABLE                  0                   // Value for disabling the torque

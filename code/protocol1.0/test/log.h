@@ -35,17 +35,18 @@
 
 using namespace std;
 
-enum logLevel 
-{ 
+enum logLevel
+{
 	logERROR = 0,
 	logWARNING = 1,
 	logINFO = 2,
-	logDEBUG = 3 
+	logDEBUG = 3
 };
 
 class logger
 {
 public:
+
 	logger();
 	~logger();
 

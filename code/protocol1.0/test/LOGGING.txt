@@ -107,3 +107,255 @@
  03-07-2018 01:30:32.156 INFO: Reading in new goal
  03-07-2018 01:30:32.218 INFO: Sending in new goal
  03-07-2018 01:30:32.281 INFO: Eating position set
+ 03-07-2018 01:48:03.000 INFO: Port Opened
+ 03-07-2018 01:48:03.125 INFO: Baudrate Set
+ 03-07-2018 01:48:03.187 DEBUG: Value of theta1 is 21.8014
+ 03-07-2018 01:48:03.187 DEBUG: Value of z1 is 135
+ 03-07-2018 01:48:03.187 DEBUG: Value of r1 is 250
+ 03-07-2018 01:48:03.187 DEBUG: Value of theta3 is 38.5539
+ 03-07-2018 01:48:03.187 DEBUG: Value of psi is 14.6116
+ 03-07-2018 01:48:03.187 DEBUG: Value of beta is 28.369
+ 03-07-2018 01:48:03.187 DEBUG: Value of theta2 is 42.9805
+ 03-07-2018 01:48:03.187 DEBUG: Value of theta4 is 58.4655
+ 03-07-2018 01:48:04.562 INFO: Loosening Grip
+ 03-07-2018 01:48:06.656 INFO: Reading in new goal
+ 03-07-2018 01:48:06.703 INFO: Sending in new goal
+ 03-07-2018 01:48:06.765 INFO: Eating position set
+ 03-07-2018 01:48:09.734 INFO: Sending in new goal
+ 03-07-2018 01:57:27.000 INFO: Port Opened
+ 03-07-2018 01:57:27.125 INFO: Baudrate Set
+ 03-07-2018 01:57:27.188 DEBUG: Value of theta1 is 21.8014
+ 03-07-2018 01:57:27.188 DEBUG: Value of theta3 is 38.5539
+ 03-07-2018 01:57:27.188 DEBUG: Value of theta2 is 42.9805
+ 03-07-2018 01:57:27.188 DEBUG: Value of theta4 is 58.4655
+ 03-07-2018 01:57:30.547 INFO: Loosening Grip
+ 03-07-2018 01:57:32.829 INFO: Loosening Grip
+ 03-07-2018 01:57:34.875 INFO: Reading in new goal
+ 03-07-2018 01:57:34.922 INFO: Sending in new goal
+ 03-07-2018 01:57:34.985 INFO: Eating position set
+ 03-07-2018 01:57:39.672 INFO: Loosening Grip
+ 03-07-2018 01:57:40.954 INFO: Reading in new goal
+ 03-07-2018 01:57:40.000 INFO: Sending in new goal
+ 03-07-2018 01:57:40.063 INFO: Eating position set
+ 03-07-2018 01:57:55.000 INFO: Port Opened
+ 03-07-2018 01:57:55.125 INFO: Baudrate Set
+ 03-07-2018 01:57:55.187 DEBUG: Value of theta1 is 21.8014
+ 03-07-2018 01:57:55.187 DEBUG: Value of theta3 is 38.5539
+ 03-07-2018 01:57:55.187 DEBUG: Value of theta2 is 42.9805
+ 03-07-2018 01:57:55.187 DEBUG: Value of theta4 is 58.4655
+ 03-07-2018 01:58:02.531 INFO: Loosening Grip
+ 03-07-2018 01:58:03.468 INFO: Reading in new goal
+ 03-07-2018 01:58:03.531 INFO: Sending in new goal
+ 03-07-2018 01:58:03.593 INFO: Eating position set
+ 03-07-2018 01:58:05.000 INFO: Sending in new goal
+ 03-07-2018 01:58:31.531 INFO: Sending in new goal
+ 03-07-2018 01:59:01.000 INFO: Port Opened
+ 03-07-2018 01:59:01.125 INFO: Baudrate Set
+ 03-07-2018 01:59:01.203 DEBUG: Value of theta1 is 21.8014
+ 03-07-2018 01:59:01.203 DEBUG: Value of theta3 is 63.0638
+ 03-07-2018 01:59:01.203 DEBUG: Value of theta2 is 8.81028
+ 03-07-2018 01:59:01.203 DEBUG: Value of theta4 is 68.126
+ 03-07-2018 01:59:02.250 INFO: Loosening Grip
+ 03-07-2018 01:59:04.875 INFO: Reading in new goal
+ 03-07-2018 01:59:04.937 INFO: Sending in new goal
+ 03-07-2018 01:59:04.000 INFO: Eating position set
+ 03-07-2018 01:59:07.797 INFO: Sending in new goal
+ 09-07-2018 10:03:00.000 INFO: Port Opened
+ 09-07-2018 10:03:00.125 INFO: Baudrate Set
+ 09-07-2018 10:03:00.188 DEBUG: Value of theta1 is 21.8014
+ 09-07-2018 10:03:00.188 DEBUG: Value of theta3 is 63.0638
+ 09-07-2018 10:03:00.188 DEBUG: Value of theta2 is 8.81028
+ 09-07-2018 10:03:00.188 DEBUG: Value of theta4 is 68.126
+ 09-07-2018 10:03:04.672 INFO: Loosening Grip
+ 09-07-2018 10:03:05.641 INFO: Reading in new goal
+ 09-07-2018 10:03:05.688 INFO: Sending in new goal
+ 09-07-2018 10:03:05.750 INFO: Eating position set
+ 09-07-2018 10:05:25.000 INFO: Port Opened
+ 09-07-2018 10:05:25.125 INFO: Baudrate Set
+ 09-07-2018 10:05:25.188 DEBUG: Value of theta1 is 11.3099
+ 09-07-2018 10:05:25.188 DEBUG: Value of theta3 is 58.4324
+ 09-07-2018 10:05:25.188 DEBUG: Value of theta2 is 40.5596
+ 09-07-2018 10:05:25.188 DEBUG: Value of theta4 is 41.008
+ 09-07-2018 10:05:27.094 INFO: Loosening Grip
+ 09-07-2018 10:05:28.078 INFO: Reading in new goal
+ 09-07-2018 10:05:28.141 INFO: Sending in new goal
+ 09-07-2018 10:05:28.203 INFO: Eating position set
+ 14-07-2018 03:14:31.000 INFO: Port Opened
+ 14-07-2018 03:14:31.125 INFO: Baudrate Set
+ 14-07-2018 03:14:31.187 DEBUG: Value of theta1 is 44.9999
+ 14-07-2018 03:14:31.187 DEBUG: Value of theta3 is 151.027
+ 14-07-2018 03:14:31.187 DEBUG: Value of theta2 is 24.8968
+ 14-07-2018 03:14:31.187 DEBUG: Value of theta4 is -35.9241
+ 14-07-2018 03:14:42.703 INFO: Loosening Grip
+ 14-07-2018 03:14:57.250 INFO: Reading in new goal
+ 14-07-2018 03:14:57.297 INFO: Sending in new goal
+ 14-07-2018 03:14:57.375 INFO: Eating position set
+ 14-07-2018 03:15:01.062 WARNING: The degree is wrong!
+ 14-07-2018 03:15:01.062 ERROR: Move Failed
+ 14-07-2018 03:15:28.000 INFO: Port Opened
+ 14-07-2018 03:15:29.125 INFO: Baudrate Set
+ 14-07-2018 03:15:29.188 DEBUG: Value of theta1 is 26.565
+ 14-07-2018 03:15:29.188 DEBUG: Value of theta3 is 135.262
+ 14-07-2018 03:15:29.188 DEBUG: Value of theta2 is 78.4429
+ 14-07-2018 03:15:29.188 DEBUG: Value of theta4 is -73.7053
+ 14-07-2018 03:15:30.297 INFO: Loosening Grip
+ 14-07-2018 03:15:35.391 INFO: Reading in new goal
+ 14-07-2018 03:15:35.453 INFO: Sending in new goal
+ 14-07-2018 03:15:35.516 INFO: Eating position set
+ 14-07-2018 03:15:36.828 WARNING: The degree is wrong!
+ 14-07-2018 03:15:36.828 ERROR: Move Failed
+ 14-07-2018 03:15:38.985 INFO: Sending in new goal
+ 14-07-2018 03:15:39.531 WARNING: The degree is wrong!
+ 14-07-2018 03:15:39.531 ERROR: Move Failed
+ 14-07-2018 03:15:40.813 INFO: Sending in new goal
+ 14-07-2018 03:15:47.766 WARNING: The degree is wrong!
+ 14-07-2018 03:15:47.766 ERROR: Move Failed
+ 14-07-2018 03:15:49.328 INFO: Sending in new goal
+ 14-07-2018 03:16:05.000 INFO: Port Opened
+ 14-07-2018 03:16:05.125 INFO: Baudrate Set
+ 14-07-2018 03:16:05.187 DEBUG: Value of theta1 is 11.3099
+ 14-07-2018 03:16:05.187 DEBUG: Value of theta3 is 58.4324
+ 14-07-2018 03:16:05.187 DEBUG: Value of theta2 is 40.5596
+ 14-07-2018 03:16:05.187 DEBUG: Value of theta4 is 41.008
+ 14-07-2018 03:16:07.859 INFO: Loosening Grip
+ 14-07-2018 03:16:09.625 INFO: Reading in new goal
+ 14-07-2018 03:16:09.687 INFO: Sending in new goal
+ 14-07-2018 03:16:09.750 INFO: Eating position set
+ 14-07-2018 03:16:15.344 INFO: Sending in new goal
+ 14-07-2018 03:16:27.000 INFO: Port Opened
+ 14-07-2018 03:16:27.125 INFO: Baudrate Set
+ 14-07-2018 03:16:27.187 DEBUG: Value of theta1 is 11.3099
+ 14-07-2018 03:16:27.187 DEBUG: Value of theta3 is 58.4324
+ 14-07-2018 03:16:27.187 DEBUG: Value of theta2 is 40.5596
+ 14-07-2018 03:16:27.187 DEBUG: Value of theta4 is 41.008
+ 14-07-2018 03:16:29.953 INFO: Loosening Grip
+ 14-07-2018 03:16:33.218 INFO: Reading in new goal
+ 14-07-2018 03:16:33.265 INFO: Sending in new goal
+ 14-07-2018 03:16:33.328 INFO: Eating position set
+ 14-07-2018 03:17:01.328 INFO: Sending in new goal
+ 14-07-2018 03:17:10.859 INFO: Sending in new goal
+ 14-07-2018 03:17:12.671 INFO: Sending in new goal
+ 17-07-2018 04:20:59.000 ERROR:  Failed to open the port!
+ 17-07-2018 04:21:59.000 ERROR:  Failed to open the port!
+ 17-07-2018 04:22:11.000 ERROR:  Failed to open the port!
+ 17-07-2018 04:24:13.000 INFO: Port Opened
+ 17-07-2018 04:24:13.125 INFO: Baudrate Set
+ 17-07-2018 04:24:14.188 DEBUG: Value of theta1 is 11.3099
+ 17-07-2018 04:24:14.203 DEBUG: Value of theta3 is 58.4324
+ 17-07-2018 04:24:14.203 DEBUG: Value of theta2 is 40.5596
+ 17-07-2018 04:24:14.203 DEBUG: Value of theta4 is 41.008
+ 17-07-2018 04:24:15.078 INFO: Loosening Grip
+ 17-07-2018 04:24:20.859 INFO: Reading in new goal
+ 17-07-2018 04:24:20.922 INFO: Sending in new goal
+ 17-07-2018 04:24:20.984 INFO: Eating position set
+ 17-07-2018 04:24:22.500 INFO: Sending in new goal
+ 17-07-2018 04:24:24.531 INFO: Sending in new goal
+ 17-07-2018 04:25:04.000 INFO: Port Opened
+ 17-07-2018 04:25:04.125 INFO: Baudrate Set
+ 17-07-2018 04:25:04.188 DEBUG: Value of theta1 is 11.3099
+ 17-07-2018 04:25:04.188 DEBUG: Value of theta3 is 58.4324
+ 17-07-2018 04:25:04.188 DEBUG: Value of theta2 is 40.5596
+ 17-07-2018 04:25:04.188 DEBUG: Value of theta4 is 41.008
+ 17-07-2018 04:25:16.625 INFO: Loosening Grip
+ 17-07-2018 04:25:22.766 INFO: Reading in new goal
+ 17-07-2018 04:25:22.813 INFO: Sending in new goal
+ 17-07-2018 04:25:22.875 INFO: Eating position set
+ 17-07-2018 04:25:30.406 INFO: Loosening Grip
+ 17-07-2018 04:25:31.906 INFO: Reading in new goal
+ 17-07-2018 04:25:32.969 INFO: Sending in new goal
+ 17-07-2018 04:25:32.031 INFO: Eating position set
+ 17-07-2018 04:25:41.469 INFO: Sending in new goal
+ 17-07-2018 04:25:47.828 INFO: Loosening Grip
+ 17-07-2018 04:25:53.031 INFO: Reading in new goal
+ 17-07-2018 04:25:53.094 INFO: Sending in new goal
+ 17-07-2018 04:25:53.156 INFO: Eating position set
+ 17-07-2018 04:25:55.922 INFO: Sending in new goal
+ 17-07-2018 04:26:26.563 INFO: Sending in new goal
+ 17-07-2018 04:29:00.000 INFO: Port Opened
+ 17-07-2018 04:29:00.125 INFO: Baudrate Set
+ 17-07-2018 04:29:00.188 DEBUG: Value of theta1 is 11.3099
+ 17-07-2018 04:29:00.188 DEBUG: Value of theta3 is 58.4324
+ 17-07-2018 04:29:00.188 DEBUG: Value of theta2 is 40.5596
+ 17-07-2018 04:29:00.188 DEBUG: Value of theta4 is 41.008
+ 17-07-2018 04:29:05.313 INFO: Loosening Grip
+ 17-07-2018 04:29:13.391 INFO: Reading in new goal
+ 17-07-2018 04:29:13.453 INFO: Sending in new goal
+ 17-07-2018 04:29:13.516 INFO: Eating position set
+ 17-07-2018 04:29:16.438 INFO: Sending in new goal
+ 24-07-2018 04:22:22.000 INFO: Port Opened
+ 24-07-2018 04:22:22.125 INFO: Baudrate Set
+ 24-07-2018 04:22:22.187 DEBUG: Value of theta1 is 11.3099
+ 24-07-2018 04:22:22.187 DEBUG: Value of theta3 is 58.4324
+ 24-07-2018 04:22:22.187 DEBUG: Value of theta2 is 40.5596
+ 24-07-2018 04:22:22.187 DEBUG: Value of theta4 is 41.008
+ 24-07-2018 04:22:25.218 INFO: Loosening Grip
+ 24-07-2018 04:22:26.218 INFO: Reading in new goal
+ 24-07-2018 04:22:26.281 INFO: Sending in new goal
+ 24-07-2018 04:22:26.343 INFO: Eating position set
+ 24-07-2018 04:22:30.750 INFO: Sending in new goal
+ 24-07-2018 04:22:53.000 INFO: Port Opened
+ 24-07-2018 04:22:53.125 INFO: Baudrate Set
+ 24-07-2018 04:22:53.188 DEBUG: Value of theta1 is 11.3099
+ 24-07-2018 04:22:53.188 DEBUG: Value of theta3 is 58.4324
+ 24-07-2018 04:22:53.188 DEBUG: Value of theta2 is 40.5596
+ 24-07-2018 04:22:53.188 DEBUG: Value of theta4 is 41.008
+ 24-07-2018 04:22:55.594 INFO: Loosening Grip
+ 24-07-2018 04:23:01.859 INFO: Reading in new goal
+ 24-07-2018 04:23:01.922 INFO: Sending in new goal
+ 24-07-2018 04:23:01.984 INFO: Eating position set
+ 24-07-2018 04:23:05.703 INFO: Sending in new goal
+ 24-07-2018 04:23:17.000 INFO: Port Opened
+ 24-07-2018 04:23:17.125 INFO: Baudrate Set
+ 24-07-2018 04:23:17.188 DEBUG: Value of theta1 is 11.3099
+ 24-07-2018 04:23:17.188 DEBUG: Value of theta3 is 58.4324
+ 24-07-2018 04:23:17.188 DEBUG: Value of theta2 is 40.5596
+ 24-07-2018 04:23:17.188 DEBUG: Value of theta4 is 41.008
+ 24-07-2018 04:23:24.531 INFO: Loosening Grip
+ 24-07-2018 04:23:28.766 INFO: Reading in new goal
+ 24-07-2018 04:23:28.828 INFO: Sending in new goal
+ 24-07-2018 04:23:28.891 INFO: Eating position set
+ 24-07-2018 04:23:31.953 INFO: Sending in new goal
+ 31-07-2018 02:51:25.000 INFO: Port Opened
+ 31-07-2018 02:51:25.125 INFO: Baudrate Set
+ 31-07-2018 02:52:03.000 INFO: Port Opened
+ 31-07-2018 02:52:03.125 INFO: Baudrate Set
+ 31-07-2018 02:52:04.188 DEBUG: Value of theta1 is 11.3099
+ 31-07-2018 02:52:04.188 DEBUG: Value of theta3 is 58.4324
+ 31-07-2018 02:52:04.188 DEBUG: Value of theta2 is 40.5596
+ 31-07-2018 02:52:04.188 DEBUG: Value of theta4 is 41.008
+ 31-07-2018 02:52:06.657 INFO: Loosening Grip
+ 31-07-2018 02:52:12.985 INFO: Reading in new goal
+ 31-07-2018 02:52:12.032 INFO: Sending in new goal
+ 31-07-2018 02:52:12.094 INFO: Eating position set
+ 31-07-2018 02:52:16.875 INFO: Sending in new goal
+ 31-07-2018 02:52:23.500 INFO: Sending in new goal
+ 31-07-2018 02:52:31.000 INFO: Port Opened
+ 31-07-2018 02:52:31.125 INFO: Baudrate Set
+ 31-07-2018 02:52:31.188 DEBUG: Value of theta1 is 11.3099
+ 31-07-2018 02:52:31.188 DEBUG: Value of theta3 is 58.4324
+ 31-07-2018 02:52:31.188 DEBUG: Value of theta2 is 40.5596
+ 31-07-2018 02:52:31.188 DEBUG: Value of theta4 is 41.008
+ 31-07-2018 02:52:37.344 INFO: Loosening Grip
+ 31-07-2018 02:52:44.766 INFO: Reading in new goal
+ 31-07-2018 02:52:44.829 INFO: Sending in new goal
+ 31-07-2018 02:52:44.891 INFO: Eating position set
+ 31-07-2018 02:53:00.625 INFO: Sending in new goal
+ 31-07-2018 02:53:16.985 INFO: Loosening Grip
+ 31-07-2018 02:53:23.750 INFO: Reading in new goal
+ 31-07-2018 02:53:23.797 INFO: Sending in new goal
+ 31-07-2018 02:53:23.860 INFO: Eating position set
+ 31-07-2018 02:53:27.688 INFO: Sending in new goal
+ 31-07-2018 02:53:31.485 INFO: Sending in new goal
+ 02-08-2018 01:41:54.000 INFO: Port Opened
+ 02-08-2018 01:41:54.125 INFO: Baudrate Set
+ 02-08-2018 01:41:54.203 DEBUG: Value of theta1 is 11.3099
+ 02-08-2018 01:41:54.203 DEBUG: Value of theta3 is 58.4324
+ 02-08-2018 01:41:54.203 DEBUG: Value of theta2 is 40.5596
+ 02-08-2018 01:41:54.203 DEBUG: Value of theta4 is 41.008
+ 02-08-2018 01:42:00.547 INFO: Loosening Grip
+ 02-08-2018 01:42:06.688 INFO: Reading in new goal
+ 02-08-2018 01:42:06.750 INFO: Sending in new goal
+ 02-08-2018 01:42:06.813 INFO: Eating position set
+ 02-08-2018 01:42:10.172 INFO: Sending in new goal
+ 02-08-2018 01:42:33.906 INFO: Sending in new goal
+ 06-08-2018 01:12:40.000 ERROR:  Failed to open the port!

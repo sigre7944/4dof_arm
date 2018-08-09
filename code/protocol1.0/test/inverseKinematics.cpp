@@ -45,8 +45,8 @@ void inverseKinematics::cal3() { //2nd calculation
 	theta[2] = acos( (pow(z1, 2) + pow(r1, 2) - pow(l2, 2) - pow(l3, 2)) / (2 * l2*l3));
 
 	theta[2] = deg(theta[2]);
-	log_->Add(logDEBUG) << "Value of z1 is " << z1 << endl;
-	log_->Add(logDEBUG) << "Value of r1 is " << r1 << endl;
+	//log_->Add(logDEBUG) << "Value of z1 is " << z1 << endl;
+	//log_->Add(logDEBUG) << "Value of r1 is " << r1 << endl;
 	log_->Add(logDEBUG) << "Value of theta3 is " << theta[2] << endl;
 }
 
@@ -61,8 +61,8 @@ void inverseKinematics::cal2() { //3rd calculation
 	else if (theta[2] < 0) {
 		theta[1] = 90-(90 - beta + psi);
 	}
-	log_->Add(logDEBUG) << "Value of psi is " << psi << endl;
-	log_->Add(logDEBUG) << "Value of beta is " << beta << endl;
+	//log_->Add(logDEBUG) << "Value of psi is " << psi << endl;
+	//log_->Add(logDEBUG) << "Value of beta is " << beta << endl;
 	log_->Add(logDEBUG) << "Value of theta2 is " << theta[1] << endl;
 }
 
